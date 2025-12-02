@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCET CSE Department Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <!-- Left Logo -->
+                <div class="logo-left">
+                    <img src="{{ url_for('static', filename='vcet.jpg') }}" alt="VCET Logo" class="header-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-placeholder" style="display: none;">
+                        <i class="fas fa-university"></i>
+                    </div>
+                </div>
+                
+                <!-- Center Text -->
+                <div class="header-center">
+                    <h1 class="college-name">Velammal College of Engineering and Technology</h1>
+                    <p class="autonomous">(Autonomous)</p>
+                    <p class="location">Viraganur, Madurai-09</p>
+                    <div class="subtitle">Intelligent Assistant & Timetable Generator</div>
+                </div>
+                
+                <!-- Right Logo -->
+                <div class="logo-right">
+                    <img src="{{ url_for('static', filename='CSE.jpeg') }}" alt="CSE Department Logo" class="header-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-placeholder" style="display: none;">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- User Type Selection -->
+        <div class="user-selection" id="userSelection">
+            <h2>Who are you?</h2>
+            <div class="user-cards">
+                <div class="user-card" data-type="student">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Student</h3>
+                    <p>Get academic help, learn, and explore placement records</p>
+                </div>
+                <div class="user-card" data-type="parent">
+                    <i class="fas fa-users"></i>
+                    <h3>Parent</h3>
+                    <p>View placement records and department information</p>
+                </div>
+                <div class="user-card" data-type="faculty">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Faculty</h3>
+                    <p>Access department info and generate timetables</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent" style="display: none;">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-cog"></i> Settings</h3>
+                    <button class="btn btn-primary" id="initBtn">
+                        <i class="fas fa-power-off"></i> Initialize Chatbot
+                    </button>
+                    <div class="status" id="initStatus"></div>
+                </div>
+
+                <!-- Faculty Timetable Section -->
+                <div class="sidebar-section" id="timetableSection" style="display: none;">
+                    <h3><i class="fas fa-calendar-alt"></i> Timetable Generator</h3>
+                    <input type="text" id="facultyName" placeholder="Faculty Name" class="input-field">
+                    <div class="semester-select">
+                        <select id="semester1" class="select-field">
+                            <option value="1st Semester">1st Semester</option>
+                            <option value="2nd Semester">2nd Semester</option>
+                            <option value="3rd Semester">3rd Semester</option>
+                            <option value="4th Semester">4th Semester</option>
+                            <option value="5th Semester">5th Semester</option>
+                            <option value="6th Semester">6th Semester</option>
+                            <option value="7th Semester">7th Semester</option>
+                            <option value="8th Semester">8th Semester</option>
+                        </select>
+                        <select id="semester2" class="select-field">
+                            <option value="1st Semester">1st Semester</option>
+                            <option value="2nd Semester">2nd Semester</option>
+                            <option value="3rd Semester" selected>3rd Semester</option>
+                            <option value="4th Semester">4th Semester</option>
+                            <option value="5th Semester">5th Semester</option>
+                            <option value="6th Semester">6th Semester</option>
+                            <option value="7th Semester">7th Semester</option>
+                            <option value="8th Semester">8th Semester</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="generateTimetableBtn">
+                        <i class="fas fa-file-pdf"></i> Generate Timetable
+                    </button>
+                    <div class="status" id="timetableStatus"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <button class="btn btn-secondary" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <main class="chat-area">
+                <div class="chat-header">
+                    <h2 id="chatTitle">Chat with VCET CSE Assistant</h2>
+                    <div class="user-badge" id="userBadge"></div>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <i class="fas fa-robot"></i>
+                        <p>Welcome! Please initialize the chatbot to start chatting.</p>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Type your message here..." class="chat-input" disabled>
+                    <button id="sendBtn" class="send-btn" disabled>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
+

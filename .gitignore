@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+*.env
+
+# Chroma Vectorstore
+vectorstore/
+chroma_db/
+
+# Model directories
+models/
+local_models/
+embedding_model/
+
+# Temporary files
+*.log
+*.tmp
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+
