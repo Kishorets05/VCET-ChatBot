@@ -72,28 +72,7 @@ Vector DB	ChromaDB
 PDF Processing	PyPDF2
 File Storage	Local FS
 Models	Embedding + Local LLM Helpers
-📁 Project Structure
-vcet_chatbot_project/
-│
-├── app/                     # Flask backend
-│   ├── web_app.py
-│   ├── rag_system.py
-│   ├── timetable_generator.py
-│   ├── __init__.py
-│
-├── data/                    # PDF/Text data for RAG
-│
-├── static/                  # CSS, JS, images
-│
-├── templates/               # HTML templates
-│
-├── vectorstore/             # Chroma vector DB
-│
-├── models/                  # Embedding + local models
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
+
 
 ▶️ How to Run
 1. Install packages
