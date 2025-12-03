@@ -1,95 +1,102 @@
-📘 VCET AI Assistant – RAG Chatbot & Timetable Generator
+# 📘 VCET AI Assistant – RAG Chatbot & Timetable Generator
 
-An end-to-end AI-powered academic assistant built for the VCET CSE Department, combining:
+> An end-to-end AI-powered academic assistant built for the VCET CSE Department, combining Retrieval-Augmented Generation (RAG), Google Gemini API, PDF-based document search, and Faculty Timetable Generation.
 
-Retrieval-Augmented Generation (RAG)
+---
 
-Google Gemini API
+## 🚀 Features
 
-PDF-based document search
+### 🔍 1. RAG Chatbot
 
-Faculty Timetable Generation
+- **Document Intelligence**: Extracts information from department PDFs including:
+  - 📚 Syllabus
+  - 📋 Regulations
+  - 📊 Placement reports
+  - 📝 Publications
+  - 🏢 Infrastructure
+  - 👥 Faculty list
 
-Flask Web Backend
+- **Advanced Search**: Uses document embeddings + similarity search for accurate retrieval
+- **AI-Powered Responses**: Generates accurate answers using Google Gemini API
 
-Clean HTML/CSS/JS Frontend
+### 🗂 2. Automated Timetable Generator
 
-This application intelligently answers student/faculty queries and dynamically generates timetables using department syllabus and faculty details.
+- ✅ Identifies subjects for selected semesters
+- ✅ Extracts course titles dynamically
+- ✅ Generates PDF timetable for faculty
+- ✅ Uses fallback PDF extraction if API fails
 
-🚀 Features
-🔍 1. RAG Chatbot
+### 🌐 3. Flask Web Application
 
-Extracts information from department PDFs:
+- **Modern Interface**: Clean HTML/CSS/JS frontend
+- **RESTful APIs** for:
+  - 💬 Chatbot queries
+  - 📅 Timetable generation
+  - 🔧 Initialization
+  - 📥 File downloads
+- **Stable Backend**: Robust Flask server for ML + RAG logic
 
-Syllabus
+---
 
-Regulations
+## 🛠 Tech Stack
 
-Placement reports
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | HTML, CSS, JavaScript |
+| **Backend** | Flask, Python |
+| **AI / ML** | Gemini API, Embeddings |
+| **Vector DB** | ChromaDB |
+| **PDF Processing** | PyPDF2 |
+| **File Storage** | Local File System |
+| **Models** | Embedding + Local LLM Helpers |
 
-Publications
+---
 
-Infrastructure
+## ▶️ How to Run
 
-Faculty list
+### Prerequisites
 
-Uses document embeddings + similarity search
+- Python 3.8 or higher
+- pip package manager
 
-Generates accurate answers using Gemini API
+### Installation Steps
 
-🗂 2. Automated Timetable Generator
+1. **Install packages**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Identifies subjects for selected semesters
+2. **Start the server**
+   ```bash
+   python app/web_app.py
+   ```
 
-Extracts course titles dynamically
+3. **Open in browser**
+   ```
+   http://localhost:5000
+   ```
 
-Generates PDF timetable for faculty
+---
 
-Uses fallback PDF extraction if API fails
+## 📄 Future Enhancements
 
-🌐 3. Flask Web Application
+- [ ] Add authentication (student/faculty login)
+- [ ] Deploy on cloud (HuggingFace/Railway/AWS)
+- [ ] Add text-to-speech responses
+- [ ] Add marks analytics dashboard
 
-Clean HTML/CSS/JS interface
+---
 
-REST APIs for:
+## 📝 License
 
-Chatbot queries
+This project is developed for VCET CSE Department academic purposes.
 
-Timetable generation
+---
 
-Initialization
+## 👥 Contributors
 
-File downloads
+Developed for VCET CSE Department
 
-Stable backend for ML + RAG logic
+---
 
-🛠 Tech Stack
-Layer	Technologies
-Frontend	HTML, CSS, JS
-Backend	Flask, Python
-AI / ML	Gemini API, Embeddings
-Vector DB	ChromaDB
-PDF Processing	PyPDF2
-File Storage	Local FS
-Models	Embedding + Local LLM Helpers
-
-
-▶️ How to Run
-1. Install packages
-pip install -r requirements.txt
-
-2. Start the server
-python app/web_app.py
-
-3. Open in browser
-http://localhost:5000
-
-📄 Future Enhancements
-
-Add authentication (student/faculty login)
-
-Deploy on cloud (HuggingFace/Railway/AWS)
-
-Add text-to-speech responses
-
-Add marks analytics dashboard
+**Made with ❤️ for VCET CSE Department**
